@@ -1,0 +1,15 @@
+.bash_logout
+.bashrc
+.profile
+.config/
+.local/
+.gitconfig
+.bash_history
+script-shell
+
+**/.terraform/
+**/.terraform.d/
+terraform.tfstate*
+
+**/.ssh/
+**/.aws/

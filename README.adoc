@@ -1,1 +1,17 @@
-= This installs nginx, code-server, and artifactory. I have not setup any vars for now 
+= Install CentOS 7 with Docker
+This creates a CentOS VM running docker and for demo it installs nginx
+It will also install code-server, and artifactory. I have not setup any vars for now 
+
+== What steps are needed
+* adjust firewall rules
+* update the json file for auth into your GCP
+
+
+== Files included are:
+** firewall (rules and specific IP address is set)
+** provider (GCP project)
+** network (network autogen)
+** vm (builds a centos 7 with docker and runs docker nginx )
+** coder (for code-server)
+** jfrog (for artifactory)
+** output to show public IP 
