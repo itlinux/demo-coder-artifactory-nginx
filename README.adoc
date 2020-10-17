@@ -1,0 +1,1 @@
+= This installs nginx, code-server, and artifactory. I have not setup any vars for now 
