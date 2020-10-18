@@ -24,7 +24,9 @@ resource "null_resource" "coder" {
     "docker exec -it code-server code-server --install-extension mindginative.terraform-snippets",
     "docker exec -it code-server curl -o /tmp/linux-prereqs.sh https://raw.githubusercontent.com/MicrosoftDocs/live-share/master/scripts/linux-prereqs.sh",
     "docker exec -it code-server sh /tmp/linux-prereqs.sh",
-    "docker stop code-server && sleep 15 && docker start code-server"
+    "docker stop code-server && sleep 15 && docker start code-server",
+    "docker exec -it code-server git config --global user.name ${var.username}",
+    "docker exec -it code-server git config --global user.email ${var.user_email}"
     ]
   }
   depends_on = [google_compute_instance.vm_instance, null_resource.docker_install]
