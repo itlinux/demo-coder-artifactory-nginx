@@ -34,3 +34,6 @@ variable "source_tags" {
 variable "allowed_ips" {
   default = "172.10.163.251/32"
 }
+variable "priv_sshkey" {
+  default = "~/.ssh/gcpf5"
+}
