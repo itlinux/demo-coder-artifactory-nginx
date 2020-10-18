@@ -14,10 +14,10 @@ resource "google_compute_instance" "vm_instance" {
     access_config {
     }
   }
- }
+}
 
 resource "null_resource" "docker_install" {
-   provisioner "remote-exec" {
+  provisioner "remote-exec" {
     connection {
       type        = "ssh"
       user        = var.ssh_user
@@ -34,4 +34,4 @@ resource "null_resource" "docker_install" {
     ]
   }
   depends_on = [google_compute_instance.vm_instance]
- }
+}

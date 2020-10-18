@@ -12,6 +12,6 @@ resource "google_compute_firewall" "vpc_network" {
     ports    = ["80", "8080", "22", "8443", "8082"]
   }
 
-  source_tags = ["remo-home"]
+  source_tags   = ["remo-home"]
   source_ranges = ["172.10.163.251/32"]
 }
