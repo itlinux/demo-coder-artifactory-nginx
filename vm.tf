@@ -20,7 +20,7 @@ resource "null_resource" "docker_install" {
    provisioner "remote-exec" {
     connection {
       type        = "ssh"
-      user        = "r.mattei"
+      user        = var.ssh_user
       private_key = file("~/.ssh/gcpf5")
       host        = google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip
       agent       = false
