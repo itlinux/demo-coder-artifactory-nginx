@@ -12,7 +12,7 @@ resource "null_resource" "docker_install" {
       "sudo curl -sSL https://get.docker.com/ | sh",
       "sudo usermod -aG docker `echo $USER`",
       "sudo systemctl --now enable docker",
-      "sudo docker run -d -p 80:80 nginx"
+      "sudo docker run -d --name nginx -p 80:80 nginx"
     ]
   }
   depends_on = [google_compute_instance.vm_instance]
