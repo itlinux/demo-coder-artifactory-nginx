@@ -11,8 +11,9 @@ resource "null_resource" "coder" {
     inline = [
     "sudo mkdir -p /coderconfig",
     "sudo groupadd coder",
+    "sudo chown -R r.mattei:r.mattei /coderconfig",
     "sudo usermod -aG coder `echo $USER`",
-    "sudo docker run -d --name=code-server -e PASSWORD=f5admin -p 8443:8443 -v /coderconfig:/config --restart unless-stopped linuxserver/code-server",
+    "docker run -d --name=code-server -e PASSWORD=f5admin -p 8080:8080 -v /coderconfig:/config --restart unless-stopped codercom/code-server:3.6.0 --cert",
     "docker exec -it code-server sudo apt update",
     "docker exec -it code-server sudo apt install unzip",
     "docker exec -it code-server curl -fOL https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip",
