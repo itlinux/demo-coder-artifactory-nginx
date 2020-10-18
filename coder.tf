@@ -3,7 +3,7 @@ resource "null_resource" "coder" {
     connection {
       type        = "ssh"
       user        = var.ssh_user
-      private_key = file("~/.ssh/gcpf5")
+      private_key = file(var.priv_sshkey)
       host        = google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip
       agent       = false
     }

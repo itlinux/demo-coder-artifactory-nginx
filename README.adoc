@@ -21,4 +21,27 @@ code-server now runs https
 == Extensions installed from TF
 ** Advanced Terraform Snippets Generator
 ** Git History
-** HashiCorp Terraform 
+** HashiCorp Terraform
+
+== JFROG
+Login using default settings:
+** username is admin
+** password is password
+
+=== Create new Generic Repo
+Once you create a new Generic Repo upload a file
+
+Example:
+
+PUT a file from the CLI into a folder called terraform
+----
+curl -uadmin:13AP4StZLiEC3bzwZFUPitjvmC18n -T vm.tf  "http://135.202.177.134:8082/artifactory/generic-local/terraform/vm.tf"
+----
+
+GET a file from the CLI (GENERIC REPO Created above)
+----
+curl -o coder.tf http://135.202.177.134:8082/artifactory/generic-local/coder.tf -uadmin
+----
+
+NOTE: by default JFROG requires username and password to pull the files, you can change this into admin/security option in JFROG
+
