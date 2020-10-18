@@ -1,6 +1,6 @@
 
 resource "google_compute_firewall" "vpc_network" {
-  name    = "remo-firewall"
+  name    = var.firewall_name
   network = google_compute_network.vpc_network.name
 
   allow {
@@ -12,6 +12,6 @@ resource "google_compute_firewall" "vpc_network" {
     ports    = ["80", "8080", "22", "8443", "8082"]
   }
 
-  source_tags   = ["remo-home"]
-  source_ranges = ["172.10.163.251/32"]
+  source_tags   = [var.source_tags]
+  source_ranges = [var.allowed_ips]
 }

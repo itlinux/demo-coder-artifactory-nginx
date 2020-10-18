@@ -16,3 +16,21 @@ variable "network_name" {
 variable "auto_create_network" {
   default = "true"
 }
+variable "instance_name" {
+  default = "remo-test-tf-instance"
+}
+variable "machine_type_selected" {
+  default = "c2-standard-8"
+}
+variable "linux_image" {
+  default = "centos-cloud/centos-7"
+}
+variable "firewall_name" {
+  default = "remo-firewall"
+}
+variable "source_tags" {
+  default = "remo-home"
+}
+variable "allowed_ips" {
+  default = "172.10.163.251/32"
+}

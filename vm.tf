@@ -1,10 +1,10 @@
 resource "google_compute_instance" "vm_instance" {
-  name         = "remo-test-tf-instance"
-  machine_type = "c2-standard-8"
+  name         = var.instance_name
+  machine_type = var.machine_type_selected
 
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos-7"
+      image = var.linux_image
     }
   }
 
