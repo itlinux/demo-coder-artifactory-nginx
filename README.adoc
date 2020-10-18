@@ -1,6 +1,7 @@
 = Install CentOS 7 with Docker
 This creates a CentOS VM running docker and for demo it installs nginx
 It will also install code-server, and artifactory. I have not setup any vars for now
+code-server now runs https
 
 == What steps are needed
 * adjust firewall rules
@@ -12,7 +13,12 @@ It will also install code-server, and artifactory. I have not setup any vars for
 ** provider (GCP project)
 ** network (network autogen)
 ** vm (builds a centos 7 with docker and runs docker nginx )
-** coder (for code-server uses port 8443)
+** coder (for code-server uses port 8080)
 ** jfrog (for artifactory uses port 8082)
 ** output to show public IP
 ** nginx uses port 80
+
+== Extensions installed from TF
+** Advanced Terraform Snippets Generator
+** Git History
+** HashiCorp Terraform 
