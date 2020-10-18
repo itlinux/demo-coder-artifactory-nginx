@@ -10,3 +10,6 @@ variable "username" {
 variable "user_email" {
   default = "nobody@example.com"
 }
+variable "network_name" {
+  default = "remo-terraform"
+}
