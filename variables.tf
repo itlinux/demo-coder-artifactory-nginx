@@ -37,3 +37,15 @@ variable "allowed_ips" {
 variable "priv_sshkey" {
   default = "~/.ssh/gcpf5"
 }
+variable "region" {
+  default = "us-central1"
+}
+variable "zone" {
+  default = "us-central1-c"
+}
+variable "projectid" {
+  default = "f5-gcs-4261-sales-na-w"
+}
+variable "creds" {
+  default = "../gcp-creds/f5 GCS 4261 SALES NA W-6bf11d2623a9.json"
+}

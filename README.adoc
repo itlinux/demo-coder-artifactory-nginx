@@ -5,7 +5,7 @@ code-server now runs https
 
 == What steps are needed
 * adjust firewall rules
-* update the json file for auth into your GCP
+* download your json file before you run Terraform
 
 
 == Files included are:
