@@ -11,7 +11,6 @@ resource "google_compute_firewall" "vpc_network" {
     protocol = "tcp"
     ports    = ["80", "8080", "22", "8443", "8082"]
   }
-
   source_tags   = [var.source_tags]
-  source_ranges = [var.allowed_ips]
+  source_ranges = [for v, k in var.allowed_ips : k if k != "all"]
 }

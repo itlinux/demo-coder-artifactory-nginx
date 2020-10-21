@@ -31,8 +31,13 @@ variable "firewall_name" {
 variable "source_tags" {
   default = "remo-home"
 }
+
 variable "allowed_ips" {
-  default = "172.10.163.251/32"
+        type = map
+        default = {
+                ip1= "166.70.92.176/32"
+                ip2= "172.10.163.251"
+        }
 }
 variable "priv_sshkey" {
   default = "~/.ssh/gcpf5"
