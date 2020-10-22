@@ -37,10 +37,14 @@ variable "allowed_ips" {
         default = {
                 ip1= "166.70.92.176/32"
                 ip2= "172.10.163.251"
+                ip3= "99.109.51.251"
         }
 }
 variable "priv_sshkey" {
   default = "~/.ssh/gcpf5"
+}
+variable "public_key_file" {
+  default = "~/.ssh/gcpf5.pub"
 }
 variable "region" {
   default = "us-central1"

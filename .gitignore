@@ -10,6 +10,7 @@ script-shell
 **/.terraform/
 **/.terraform.d/
 terraform.tfstate*
+terraform.tfvars
 
 **/.ssh/
 **/.aws/

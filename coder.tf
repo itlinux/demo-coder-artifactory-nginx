@@ -1,3 +1,18 @@
+resource random_integer "password-length" {
+  min = 12
+  max = 25
+}
+
+resource "random_password" "coder-password" {
+  length           = random_integer.password-length.result
+  min_upper        = 1
+  min_lower        = 1
+  min_numeric      = 1
+  min_special      = 1
+  special          = true
+  override_special = "_%@"
+}
+
 resource "null_resource" "coder" {
   provisioner "remote-exec" {
     connection {
@@ -13,7 +28,7 @@ resource "null_resource" "coder" {
       "sudo groupadd coder",
       "sudo usermod -aG coder `echo $USER`",
       "sudo chown -R $USER:$USER /coderconfig",
-      "docker run -d --name=code-server -e PASSWORD=${var.passwd} -p 8080:8080 -v /coderconfig:/config --restart unless-stopped codercom/code-server:3.6.0 --cert",
+      "docker run -d --name=code-server -e PASSWORD=${random_password.coder-password.result} -p 8080:8080 -v /coderconfig:/config --restart unless-stopped codercom/code-server:3.6.0 --cert",
       "docker exec -it code-server sudo apt update",
       "docker exec -it code-server sudo apt install unzip",
       "docker exec -it code-server curl -fOL https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip",
