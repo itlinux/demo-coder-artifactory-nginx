@@ -33,12 +33,12 @@ variable "source_tags" {
 }
 
 variable "allowed_ips" {
-        type = map
-        default = {
-                ip1= "166.70.92.176/32"
-                ip2= "172.10.163.251"
-                ip3= "99.109.51.251"
-        }
+  type = map
+  default = {
+    ip1 = "166.70.92.176/32"
+    ip2 = "172.10.163.251"
+    ip3 = "99.109.51.251"
+  }
 }
 variable "priv_sshkey" {
   default = "~/.ssh/gcpf5"
@@ -56,5 +56,5 @@ variable "projectid" {
   default = "f5-gcs-4261-sales-na-w"
 }
 variable "creds" {
-  default = "../gcp-creds/f5 GCS 4261 SALES NA W-6bf11d2623a9.json"
+  default = "../../gcp-creds/f5 GCS 4261 SALES NA W-6bf11d2623a9.json"
 }

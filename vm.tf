@@ -8,7 +8,7 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
   metadata = {
-      ssh-keys = "${var.ssh_user}:${file(var.public_key_file)}"
+    ssh-keys = "${var.ssh_user}:${file(var.public_key_file)}"
   }
   network_interface {
     # A default network is created for all GCP projects
