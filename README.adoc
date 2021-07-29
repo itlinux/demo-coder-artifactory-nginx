@@ -28,8 +28,21 @@ Login using default settings:
 ** username is admin
 ** password is password
 
+NOTE: Once you login you need to set the password
+
 === Create new Generic Repo
 Once you create a new Generic Repo upload a file
+Generic REPO go select admin and then local under the Repositories, create it and call it terraform
+Now go and select the file under the HOME icon, and select the repo called terraform. On the right panel
+you will see the header of Info. Under Info, copy the name URI, you can copy the name and it will copy the info for you to pass it below.
+Now once you have the URL, push a file up for testing. Below is an example of a password that got set after the login, pushing a file called vm.tf
+from the current folder, into artifactory location repo called generic-local and the name of the repo is called terraform. Once you push it up
+you can refresh the browser to see the file into the artifactory server.
+
+To pull your files, on top right you have the Set Me Up link select it, and once you unlocked it with the password, you will be able to get the token to pull the files. 
+
+NOTE: by default JFROG requires username and password to pull the files, you can change this into admin/security option in JFROG
+
 
 Example:
 
@@ -38,10 +51,13 @@ PUT a file from the CLI into a folder called terraform
 curl -uadmin:13AP4StZLiEC3bzwZFUPitjvmC18n -T vm.tf  "http://135.202.177.134:8082/artifactory/generic-local/terraform/vm.tf"
 ----
 
-GET a file from the CLI (GENERIC REPO Created above)
+GET a file from the CLI (GENERIC REPO Created above) this will prompt for password 
 ----
 curl -o coder.tf http://135.202.177.134:8082/artifactory/generic-local/coder.tf -uadmin
 ----
 
-NOTE: by default JFROG requires username and password to pull the files, you can change this into admin/security option in JFROG
+This will use the token
+----
+curl -uadmin:AP4QuQFYR5oX4jHUM1fDZvNQmRAU6vYCGcYyh9 -O "http://200.126.157.197:8082/artifactory/terraform/<TARGET_FILE_PATH>"
+----
 

@@ -3,5 +3,5 @@ output public_ip {
 }
 
 output coder_password {
-  value = random_password.coder-password.result
+  value = random_string.coder-password.result
 }

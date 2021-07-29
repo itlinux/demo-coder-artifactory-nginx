@@ -15,7 +15,7 @@ resource "null_resource" "coder" {
       "sudo usermod -aG coder `echo $USER`",
       "sudo chown -R $USER:$USER /coderconfig",
       "curl -o /tmp/vscode-f5.vsix https://open-vsx.org/extension/F5DevCentral/vscode-f5",
-      "docker run -d --name=code-server -e PASSWORD=${random_password.coder-password.result} -p 8080:8080 -v /coderconfig:/config --restart unless-stopped codercom/code-server:3.6.0 --cert",
+      "docker run -d --name=code-server -e PASSWORD=${random_string.coder-password.result} -p 8080:8080 -v /coderconfig:/config --restart unless-stopped codercom/code-server:3.6.0 --cert",
       "docker exec -it code-server sudo apt update",
       "docker exec -it code-server sudo apt install unzip",
       "docker exec -it code-server curl -fOL https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip",

@@ -1,9 +1,9 @@
-resource random_integer "password-length" {
+resource random_integer "string-length" {
   min = 12
   max = 25
 }
-resource "random_password" "coder-password" {
-  length           = random_integer.password-length.result
+resource "random_string" "coder-password" {
+  length           = random_integer.string-length.result
   min_upper        = 1
   min_lower        = 1
   min_numeric      = 1

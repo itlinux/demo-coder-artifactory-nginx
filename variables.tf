@@ -11,7 +11,7 @@ variable "user_email" {
   default = "nobody@example.com"
 }
 variable "network_name" {
-  default = "remo-terraform"
+  default = "remo-terraform-2"
 }
 variable "auto_create_network" {
   default = "true"
